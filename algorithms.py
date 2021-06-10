@@ -17,22 +17,22 @@ def Solvable(env, x=0, y=0, Indexes=Indexes):
     elif env[x][y] == 4:
         return True, (x, y)
 
-    # Go Right
+    # Go UP
     if (x, y + 1) in Indexes:
         found, index = Solvable(env, x, y + 1, Indexes=Indexes)
         if found: return (found, index)
 
-    # Go Down
+    # Go Right
     if (x + 1, y) in Indexes:
         found, index = Solvable(env, x + 1, y, Indexes=Indexes)
         if found: return (found, index)
 
-    # Go Left
+    # Go Down
     if (x, y - 1) in Indexes:
         found, index = Solvable(env, x, y - 1, Indexes=Indexes)
         if found: return (found, index)
         
-    # Go Up
+    # Go Left
     if (x - 1, y) in Indexes:
         found, index = Solvable(env, x - 1, y, Indexes=Indexes)
         if found: return (found, index)
